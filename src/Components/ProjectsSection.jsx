@@ -43,12 +43,15 @@ export const ProjectSection = () => {
               key={project.id}
               className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
-              {/* Project Image */}
-              <div className="h-48 overflow-hidden">
+              {/* Project Image - use aspectRatio so images are not cropped */}
+              <div
+                className="w-full overflow-hidden bg-muted"
+                style={{ aspectRatio: "16/9" }}
+              >
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
 
